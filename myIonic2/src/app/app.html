@@ -1,0 +1,21 @@
+<ion-menu [content]="content">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- 注意root属性的绑定。对于ion-nav组件来说，这是第一个或者说是“根”页面。当ion-nav组件载入时，
+组件引用的rootPage变量将会作为根页面被载入 -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
